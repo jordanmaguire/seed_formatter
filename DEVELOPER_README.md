@@ -6,7 +6,7 @@ This is a README for working on SeedFormatter
 
 ```
 gem build seed_formatter.gemspec
-gem install ./seed_formatter-1.0.0.gem
+gem install ./seed_formatter-1.1.0.gem
 ```
 
 ## Running

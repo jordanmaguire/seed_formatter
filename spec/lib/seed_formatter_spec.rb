@@ -16,28 +16,28 @@ describe SeedFormatter do
     context 'options[:prefix] is provided' do
       let(:options) { {:prefix => "a prefix "} }
       it "prefixes the message with options[:prefix]" do
-        $stdout.should_receive(:puts).with(/a prefix message/)
+        expect($stdout).to receive(:puts).with(/a prefix message/)
         subject
       end
     end
     context 'options[:suffix] is provided' do
       let(:options) { {:suffix => " a suffix"} }
       it "suffixes the message with options[:suffix]" do
-        $stdout.should_receive(:puts).with(/message a suffix/)
+        expect($stdout).to receive(:puts).with(/message a suffix/)
         subject
       end
     end
     context 'options[:color] is provided' do
       let(:options) { {:color => :blue} }
       it "prints the message with the provided color" do
-        $stdout.should_receive(:puts).with("\e[34mmessage\e[0m")
+        expect($stdout).to receive(:puts).with("\e[0;34;49mmessage\e[0m")
         subject
       end
     end
     context 'options[:color] is not provided' do
       let(:options) { {:color => nil} }
       it "prints the message in white by default" do
-        $stdout.should_receive(:puts).with("\e[37mmessage\e[0m")
+        expect($stdout).to receive(:puts).with("\e[0;37;49mmessage\e[0m")
         subject
       end
     end
@@ -52,26 +52,26 @@ describe SeedFormatter do
     context 'options[:prefix] is provided' do
       let(:prefix) { "a prefix " }
       it 'passes options[:prefix] to output' do
-        tc.should_receive(:output).with(anything, hash_including(:prefix => prefix))
+        expect(tc).to receive(:output).with(anything, hash_including(:prefix => prefix))
         subject
       end
     end
     context 'options[:prefix] is not provided' do
       it 'passes a default prefix through to output' do
-        tc.should_receive(:output).with(anything, hash_including(:prefix => "*** "))
+        expect(tc).to receive(:output).with(anything, hash_including(:prefix => "*** "))
         subject
       end
     end
     context 'options[:color] is provided' do
       let(:color) { :blue }
       it 'passes options[:color] to output' do
-        tc.should_receive(:output).with(anything, hash_including(:color => color))
+        expect(tc).to receive(:output).with(anything, hash_including(:color => color))
         subject
       end
     end
     context 'options[:color] is not provided' do
       it 'passes a default color through to output' do
-        tc.should_receive(:output).with(anything, hash_including(:color => :white))
+        expect(tc).to receive(:output).with(anything, hash_including(:color => :white))
         subject
       end
     end
@@ -86,26 +86,26 @@ describe SeedFormatter do
     context 'options[:prefix] is provided' do
       let(:prefix) { "a prefix " }
       it 'passes options[:prefix] to output' do
-        tc.should_receive(:output).with(anything, hash_including(:prefix => prefix))
+        expect(tc).to receive(:output).with(anything, hash_including(:prefix => prefix))
         subject
       end
     end
     context 'options[:prefix] is not provided' do
       it 'passes a default prefix through to output' do
-        tc.should_receive(:output).with(anything, hash_including(:prefix => "  + "))
+        expect(tc).to receive(:output).with(anything, hash_including(:prefix => "  + "))
         subject
       end
     end
     context 'options[:color] is provided' do
       let(:color) { :blue }
       it 'passes options[:color] to output' do
-        tc.should_receive(:output).with(anything, hash_including(:color => color))
+        expect(tc).to receive(:output).with(anything, hash_including(:color => color))
         subject
       end
     end
     context 'options[:color] is not provided' do
       it 'passes a default color through to output' do
-        tc.should_receive(:output).with(anything, hash_including(:color => :green))
+        expect(tc).to receive(:output).with(anything, hash_including(:color => :green))
         subject
       end
     end
@@ -120,26 +120,26 @@ describe SeedFormatter do
     context 'options[:prefix] is provided' do
       let(:prefix) { "a prefix " }
       it 'passes options[:prefix] to output' do
-        tc.should_receive(:output).with(anything, hash_including(:prefix => prefix))
+        expect(tc).to receive(:output).with(anything, hash_including(:prefix => prefix))
         subject
       end
     end
     context 'options[:prefix] is not provided' do
       it 'passes a default prefix through to output' do
-        tc.should_receive(:output).with(anything, hash_including(:prefix => "  - "))
+        expect(tc).to receive(:output).with(anything, hash_including(:prefix => "  - "))
         subject
       end
     end
     context 'options[:color] is provided' do
       let(:color) { :blue }
       it 'passes options[:color] to output' do
-        tc.should_receive(:output).with(anything, hash_including(:color => color))
+        expect(tc).to receive(:output).with(anything, hash_including(:color => color))
         subject
       end
     end
     context 'options[:color] is not provided' do
       it 'passes a default color through to output' do
-        tc.should_receive(:output).with(anything, hash_including(:color => :red))
+        expect(tc).to receive(:output).with(anything, hash_including(:color => :red))
         subject
       end
     end
@@ -148,7 +148,7 @@ describe SeedFormatter do
   describe '#spacer' do
     subject { tc.spacer }
     it 'prints a blank line' do
-      $stdout.should_receive(:puts).with(/^$/)
+      expect($stdout).to receive(:puts).with(/^$/)
       subject
     end
   end

@@ -1,5 +1,5 @@
 require "seed_formatter/version"
-require "colored"
+require "colorize"
 
 module SeedFormatter
 
