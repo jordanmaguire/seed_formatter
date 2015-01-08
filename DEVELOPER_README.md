@@ -13,8 +13,11 @@ gem install ./seed_formatter-1.1.0.gem
 
 Get into `irb`.
 
-Run `require 'seed_formatter'`
+Then run:
 
-Now `include SeedFormatter`
+```
+require 'seed_formatter'
+include SeedFormatter
+```
 
 Now you can use the functions in seed_formatter.rb
