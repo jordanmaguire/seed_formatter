@@ -1,3 +1,11 @@
+# IMPORTANT: SeedFormatter is deprecated
+
+All,
+
+I created SeedFormatter a long time ago, and it suited my needs at the time. I've since established a better interface and an expanded set of responsibilities. To facilitate this, I've created the [SeedHelper](https://github.com/jordanmaguire/seed_helper) gem that can be used instead. It has all the same functionality as SeedFormatter, and some more functionality on top of that.
+
+[Check it out](https://github.com/jordanmaguire/seed_helper).
+
 # SeedFormatter
 
 SeedFormatter is a small gem I created while I was working on various projects with terrible, terrible Seed files.
